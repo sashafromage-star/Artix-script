@@ -730,8 +730,6 @@ if [ -z "$XDG_RUNTIME_DIR" ] || [ ! -d "$XDG_RUNTIME_DIR" ]; then
     chmod 700 "$XDG_RUNTIME_DIR"
 fi
 
-export WLR_NO_HARDWARE_CURSORS=1
-
 if [ -e /usr/share/glvnd/egl_vendor.d/10_nvidia.json ]; then
     export __EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/10_nvidia.json
 fi
@@ -950,8 +948,12 @@ EOF
     local nologin_bin="/usr/bin/nologin"
     [ -x "$nologin_bin" ] || nologin_bin="/bin/false"
 
+    if ! getent group greeter >/dev/null 2>&1; then
+        sudo groupadd --system greeter || true
+    fi
+
     if ! getent passwd greeter >/dev/null 2>&1; then
-        sudo useradd --system --user-group --home-dir /var/lib/greetd --shell "$nologin_bin" greeter || true
+        sudo useradd --system --gid greeter --home-dir /var/lib/greetd --shell "$nologin_bin" greeter || true
     fi
 
     sudo chown -R greeter:greeter /var/lib/greetd || true
