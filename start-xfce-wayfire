@@ -1,0 +1,28 @@
+#!/bin/sh
+# Session Xfce sur Wayland avec Wayfire (sans logind)
+
+export XDG_SESSION_TYPE=wayland
+export XDG_SESSION_DESKTOP=xfce
+export XDG_CURRENT_DESKTOP=XFCE
+
+# Filet de sécurité si pam_rundir n'a pas créé XDG_RUNTIME_DIR
+if [ -z "$XDG_RUNTIME_DIR" ] || [ ! -d "$XDG_RUNTIME_DIR" ]; then
+    export XDG_RUNTIME_DIR="/tmp/runtime-$(id -u)"
+    mkdir -p "$XDG_RUNTIME_DIR"
+    chmod 700 "$XDG_RUNTIME_DIR"
+fi
+
+
+# Nettoyage des restes d'une session précédente
+pkill -u "$(id -u)" -x pipewire-pulse 2>/dev/null
+pkill -u "$(id -u)" -x wireplumber 2>/dev/null
+pkill -u "$(id -u)" -x pipewire 2>/dev/null
+sleep 0.5
+
+# Bus D-Bus de session + PipeWire + Xfce/Wayfire
+exec dbus-run-session -- sh -c '
+    /usr/bin/pipewire &
+    /usr/bin/pipewire-pulse &
+    /usr/bin/wireplumber &
+    exec startxfce4 --wayland wayfire
+'
