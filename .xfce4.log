@@ -1,0 +1,73 @@
+/usr/bin/startxfce4: Starting X server
+
+
+X.Org X Server 1.21.1.24
+X Protocol Version 11, Revision 0
+Current Operating System: Linux navi 7.2.7-zen1-1-zen #1 ZEN SMP PREEMPT_DYNAMIC Wed, 23 Sep 2026 18:36:18 +0000 x86_64
+Kernel command line: root=PARTUUID=fae967cd-47b3-49bb-95b6-5700f7e9182f rw loglevel=3 vt.global_cursor_default=0 nouveau.modeset=0 module_blacklist=nouveau nvidia_drm.modeset=1 nvidia_drm.fbdev=1 initrd=\boot\initramfs-linux-zen.img
+ 
+Current version of pixman: 0.46.4
+	Before reporting problems, check http://wiki.x.org
+	to make sure that you have the latest version.
+Markers: (--) probed, (**) from config file, (==) default setting,
+	(++) from command line, (!!) notice, (II) informational,
+	(WW) warning, (EE) error, (NI) not implemented, (??) unknown.
+(==) Log file: "/home/ryko/.local/share/xorg/Xorg.0.log", Time: Sat Oct  3 19:37:23 2026
+(==) Using system config directory "/usr/share/X11/xorg.conf.d"
+The XKEYBOARD keymap compiler (xkbcomp) reports:
+> Warning:          Multiple symbols for level 1/group 1 on key <FK23>
+>                   Using F23, ignoring XF86TouchpadOff
+> Warning:          Symbol map for key <FK23> redefined
+>                   Using last definition for conflicting fields
+> Warning:          Symbol map for key <FK24> redefined
+>                   Using last definition for conflicting fields
+> Warning:          Could not resolve keysym XF86ElectronicPrivacyScreenOn
+> Warning:          Could not resolve keysym XF86ElectronicPrivacyScreenOff
+> Warning:          Could not resolve keysym XF86ActionOnSelection
+> Warning:          Could not resolve keysym XF86ContextualInsert
+> Warning:          Could not resolve keysym XF86ContextualQuery
+Errors from xkbcomp are not fatal to the X server
+dbus-daemon[1100]: [session uid=1000 pid=1100 pidfd=5] Activating service name='org.gtk.vfs.Daemon' requested by ':1.1' (uid=1000 pid=1111 comm="xfce4-session")
+dbus-daemon[1100]: [session uid=1000 pid=1100 pidfd=5] Successfully activated service 'org.gtk.vfs.Daemon'
+dbus-daemon[1100]: [session uid=1000 pid=1100 pidfd=5] Activating service name='org.a11y.Bus' requested by ':1.4' (uid=1000 pid=1111 comm="xfce4-session")
+dbus-daemon[1100]: [session uid=1000 pid=1100 pidfd=5] Successfully activated service 'org.a11y.Bus'
+dbus-daemon[1100]: [session uid=1000 pid=1100 pidfd=5] Activating service name='org.xfce.Xfconf' requested by ':1.1' (uid=1000 pid=1111 comm="xfce4-session")
+dbus-daemon[1100]: [session uid=1000 pid=1100 pidfd=5] Successfully activated service 'org.xfce.Xfconf'
+dbus-daemon[1145]: Activating service name='org.a11y.atspi.Registry' requested by ':1.0' (uid=1000 pid=1111 comm="xfce4-session")
+dbus-daemon[1145]: Successfully activated service 'org.a11y.atspi.Registry'
+SpiRegistry daemon is running with well-known name - org.a11y.atspi.Registry
+libxfce4windowing-Message: 19:37:24.827: Failed to fetch _NET_NUMBER_OF_DESKTOPS; assuming 1
+libxfce4windowing-Message: 19:37:24.828: Failed to get _NET_WORKAREA; using full screen dimensions
+libxfce4windowing-Message: 19:37:24.828: Failed to fetch _NET_CURRENT_DESKTOP; assuming 0
+libxfce4windowing-Message: 19:37:24.828: Failed to fetch _NET_CURRENT_DESKTOP; assuming 0
+/usr/bin/iceauth:  creating new authority file /run/user/1000/ICEauthority
+
+(xfce4-session:1111): xfce4-session-WARNING **: 19:37:24.858: Unable to launch "xfwm4": L’exécution du processus fils « xfwm4 » a échoué (Aucun fichier ou dossier de ce nom)
+dbus-daemon[1100]: [session uid=1000 pid=1100 pidfd=5] Activating service name='ca.desrt.dconf' requested by ':1.10' (uid=1000 pid=1167 comm="xfsettingsd")
+dbus-daemon[1100]: [session uid=1000 pid=1100 pidfd=5] Successfully activated service 'ca.desrt.dconf'
+libxfce4windowing-Message: 19:37:25.050: Failed to fetch _NET_CURRENT_DESKTOP; assuming 0
+xfsettingsd: No window manager registered on screen 0.
+
+(xfsettingsd:1167): xfsettingsd-WARNING **: 19:37:30.086: Failed to get the _NET_NUMBER_OF_DESKTOPS property.
+xfce4-panel: No window manager registered on screen 0. To start the panel without this check, run with --disable-wm-check.
+libxfce4windowing-Message: 19:37:38.122: Failed to fetch _NET_NUMBER_OF_DESKTOPS; assuming 1
+libxfce4windowing-Message: 19:37:38.122: Failed to get _NET_WORKAREA; using full screen dimensions
+libxfce4windowing-Message: 19:37:38.123: Failed to fetch _NET_CURRENT_DESKTOP; assuming 0
+libxfce4windowing-Message: 19:37:38.123: Failed to fetch _NET_CURRENT_DESKTOP; assuming 0
+dbus-daemon[1100]: [session uid=1000 pid=1100 pidfd=5] Activating service name='org.gtk.vfs.Metadata' requested by ':1.13' (uid=1000 pid=1178 comm="xfce4-panel")
+dbus-daemon[1100]: [session uid=1000 pid=1100 pidfd=5] Successfully activated service 'org.gtk.vfs.Metadata'
+No window manager registered on screen 0. To start the xfdesktop without this check, run with --disable-wm-check.
+libxfce4windowing-Message: 19:37:54.013: Failed to fetch _NET_NUMBER_OF_DESKTOPS; assuming 1
+libxfce4windowing-Message: 19:37:54.017: Failed to get _NET_WORKAREA; using full screen dimensions
+libxfce4windowing-Message: 19:37:54.017: Failed to fetch _NET_CURRENT_DESKTOP; assuming 0
+libxfce4windowing-Message: 19:37:54.017: Failed to fetch _NET_CURRENT_DESKTOP; assuming 0
+
+** (xfdesktop:1313): WARNING **: 19:37:54.262: Thumbnailer failed calling GetFlavors
+dbus-daemon[1100]: [session uid=1000 pid=1100 pidfd=5] Activating service name='org.gtk.vfs.UDisks2VolumeMonitor' requested by ':1.22' (uid=1000 pid=1313 comm="xfdesktop")
+dbus-daemon[1100]: [session uid=1000 pid=1100 pidfd=5] Successfully activated service 'org.gtk.vfs.UDisks2VolumeMonitor'
+xinit: connection to X server lostdbus-daemon[1145]: 
+dbus-daemon[1100]: Reloaded configuration[session uid=1000 pid=1100 pidfd=5] Reloaded configuration
+
+
+waiting for X server to shut down .(II) Server terminated successfully (0). Closing log file.
+
